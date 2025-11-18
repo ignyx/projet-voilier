@@ -16,7 +16,6 @@ void InitGPIO(GPIO_TypeDef *PORT, char BROCHE, char CONFIG) {
 	// Set the 4 control bits to zero, then write
 	control &= ~(0x0F << bit_shift);	
 	control |= control_bits << bit_shift;
-	// TODO use control, write it, write config with a bitshift of BROCHE
 	
 	// Write control back to memory
 	if (BROCHE < 8)
