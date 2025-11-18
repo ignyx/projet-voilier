@@ -11,4 +11,7 @@ void Girouette_Init ( TIM_TypeDef * Timer ) ;
 // MUST be called after Girouette_Init
 int Girouette_GetAlpha();
 
+// Configure Z channel interrupt
+// Uses PA0 pin and EXTI0 interrupt line
+void Girouette_InitCalibration_PA0 ();
 #endif

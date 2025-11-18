@@ -2,6 +2,7 @@
 #include "Pilote_GPIO.h"
 #include "Pilote_Timer.h"
 #include "Pilote_ADC.h"
+#include "Pilote_Girouette.h"
 
 /////////////////////////////////
 //  fonction 'pas top top'     //
@@ -28,6 +29,9 @@ int main (void) {
 	// Configure interrupt
 	MyTimer_ActiveIT(TIM2, 2);
 	
+	Girouette_Init(TIM3);
+	Girouette_InitCalibration_PA0();
+
 	
 	// To test the code below:
 	// - Add the card on top of the nucleo card
@@ -128,7 +132,7 @@ int main (void) {
 }
 
 */
-int ld2_active = 0;
+static int ld2_active = 0;
 
 // called on TIM2 interruptions
 void TIM2_IRQHandler ( void )
@@ -137,7 +141,8 @@ void TIM2_IRQHandler ( void )
 	TIM2->SR &= ~TIM_SR_UIF;
 	
 	// Toggle LED
-	if (ld2_active == 1) {
+//	if (ld2_active == 1) {
+	if (Girouette_GetAlpha() > 45) {
 		ResetBroche(GPIOA, 5);
 		ld2_active = 0;
 	} else {
