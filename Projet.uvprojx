@@ -434,6 +434,16 @@
               <FileType>1</FileType>
               <FilePath>.\Pilote_UART.c</FilePath>
             </File>
+            <File>
+              <FileName>Pilote_Girouette.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Girouette.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Girouette.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Girouette.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -778,7 +788,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\Projet</IncludePath>
+              <IncludePath>./</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -871,6 +881,16 @@
               <FileName>Pilote_UART.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Pilote_UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Girouette.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Girouette.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Girouette.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Girouette.c</FilePath>
             </File>
           </Files>
         </Group>
