@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>./</IncludePath>
+              <IncludePath>..\Projet;.\</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -423,6 +423,16 @@
               <FileName>Pilote_ADC.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Pilote_ADC.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_UART.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_UART.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_UART.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -851,6 +861,16 @@
               <FileName>Pilote_ADC.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Pilote_ADC.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_UART.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_UART.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_UART.c</FilePath>
             </File>
           </Files>
         </Group>
