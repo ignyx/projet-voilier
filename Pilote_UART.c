@@ -10,31 +10,42 @@ void InitUART3() {
 	//Configure les pins TX et RX
 	InitGPIO(GPIOB, 10, OUTPUT_ALTERNATE_PUSHPULL);
 	InitGPIO(GPIOB, 11, INPUT_FLOATING);
+	//Set the Uart Enable (UE) bit
 	USART3->CR1 |= (0x01 << 13);
-	//Baud rate = 9600 / USARTDIV = 468.75 / mantissa=0x1D4 & fraction=0xC
-	USART3->BRR = 0x1D4C;
+	//Baud rate = 9600 / USARTDIV = 3750 / mantissa=0xEA & fraction=0x6
+	USART3->BRR = 0xEA6;
+	//Parameters : stop bits=1 ; word length=8 (no parity bit)
+	USART3->CR1 &= ~(0b1 << 12);
+	USART3->CR2 &= ~(0b11 << 12);
+	//Enable interrupts in the NVIC
 	NVIC_EnableIRQ(USART3_IRQn);
 	NVIC_SetPriority(USART3_IRQn, 1);
 	//Set the RXNEIE bit to 1 to raise interrupt when message is received
 	USART3->CR1 |= (0b1 << 5);
 }
 
-void USART3_IRQHandler() {
-	//Recevoir le degré de rotation
-	// Bouger le plateau
-
-}
-
-void EnvoyerUART(USART_TypeDef *UART, char MESSAGE) {
+void EnvoyerUART3(char * msg) {
 	// envoyer
-
-
-	//Remettre en mode recevoir	
-	char TXE = 0b0;
-	while (TXE == 0b0) {
-		TXE = (USART3->SR & (0b1 << 7)) >> 7;
+	//Mettre en mode envoyer / clear Set the TE bit
+	USART3->CR1 &= ~(0b1 << 2);
+	USART3->CR1 |= 0b1 << 3;
+	int i = 0;
+	while (msg[i] != '\0') {
+		USART3->DR = msg[i];
+		i++;
+		//Attendre que le DR soit vide
+		char TXE = 0b0;
+		while (TXE == 0b0) {
+			TXE = (USART3->SR & (0b1 << 7)) >> 7;
+		}
 	}
-	// Set the RE bit USART_CR1.
+	//wait until TC = 1 (transmission complete)
+	char TC = 0b0;
+		while (TC == 0b0) {
+			TC = (USART3->SR & (0b1 << 6)) >> 6;
+		}
+	// Clear the TE bit, Set the RE bit
+	USART3->CR1 &= ~(0b1 << 3);
 	USART3->CR1 |= (0b1 << 2);
 }
 

@@ -778,7 +778,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\Projet</IncludePath>
+              <IncludePath>..\Projet;.\</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
