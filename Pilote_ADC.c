@@ -32,4 +32,6 @@ void ADC_init(unsigned short channel){
 	ADC1->SMPR2 &= ~ADC_SMPR2_SMP0;
 	ADC1->SMPR2 |= ADC_SMPR2_SMP0_0;
 	ADC1->SMPR2 |= ADC_SMPR2_SMP0_1;
+	// Enable interrupt for End of Conversion
+	ADC1->CR1 |= 0b1 << 5 ;
 }

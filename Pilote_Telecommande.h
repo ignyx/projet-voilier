@@ -1,9 +1,9 @@
-#ifndef __piloteGPIO_h
-#define __piloteGPIO_h
+#ifndef __piloteTelecommande_h
+#define __piloteTelecommande_h
 
 #include "stm32f10x.h"
 
-void start_telecommande();
+void Start_Telecommande();
 void Test_UART();
 	
 #endif
