@@ -444,6 +444,26 @@
               <FileType>1</FileType>
               <FilePath>.\Pilote_Girouette.c</FilePath>
             </File>
+            <File>
+              <FileName>Pilote_Ecoute.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Ecoute.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Ecoute.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Ecoute.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Roulis.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Roulis.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Roulis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Roulis.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -891,6 +911,26 @@
               <FileName>Pilote_Girouette.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Pilote_Girouette.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Ecoute.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Ecoute.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Ecoute.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Ecoute.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Roulis.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Roulis.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Roulis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Roulis.c</FilePath>
             </File>
           </Files>
         </Group>

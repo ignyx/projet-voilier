@@ -3,6 +3,7 @@
 #include "Pilote_Timer.h"
 #include "Pilote_ADC.h"
 #include "Pilote_Girouette.h"
+#include "Pilote_Ecoute.h"
 
 /////////////////////////////////
 //  fonction 'pas top top'     //
@@ -23,7 +24,7 @@ int main (void) {
 	
 	// Enable clock for timer TIM2, 72 MHz
 	// 500ms is 36 000 000 clock cycles.
-	MyTimer_Base_Init(TIM2, 3600, 10000);
+	MyTimer_Base_Init(TIM2, 360, 10000);
 	MyTimer_Base_Start(TIM2);
 	
 	// Configure interrupt
@@ -32,6 +33,7 @@ int main (void) {
 	Girouette_Init(TIM3);
 	Girouette_InitCalibration_PA0();
 
+	Ecoute_init(TIM4);
 	
 	// To test the code below:
 	// - Add the card on top of the nucleo card
@@ -142,6 +144,8 @@ void TIM2_IRQHandler ( void )
 	
 	// Toggle LED
 //	if (ld2_active == 1) {
+	
+	Ecoute_setTheta(AlphaToTheta(Girouette_GetAlpha()));
 	if (Girouette_GetAlpha() > 45) {
 		ResetBroche(GPIOA, 5);
 		ld2_active = 0;
