@@ -4,6 +4,7 @@
 #include "Pilote_ADC.h"
 #include "Pilote_Girouette.h"
 #include "Pilote_Ecoute.h"
+#include "Pilote_Roulis.h"
 
 /////////////////////////////////
 //  fonction 'pas top top'     //
@@ -15,13 +16,28 @@ void Attente (void)
 }
 /////////////////////////////////
 int main (void) {
-	// The goal of this program is to flash an onboard Nucleo LED every 500ms
+
 	
-	// Onboard LED is on GPIO PA5
-	InitGPIO(GPIOA, 5, OUTPUT_PUSHPULL);
-	InitGPIO(GPIOA, 1, INPUT_ANALOG);
+	// SPI1 and TIM3 share same pins so we remap TIM3.
+	// CH1: PC6 (opposite of D15)
+	// CH2: PC7 (D9)
+	RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;
+	AFIO->MAPR |= AFIO_MAPR_TIM3_REMAP;
+	Girouette_Init(TIM3);
+	Girouette_InitCalibration_PA0();
+
+	// TIM4 in on PB6
+	Ecoute_init(TIM4);
 	
-	
+
+	// SPI2 can't be used according to MySPI lib.
+	// NSS:  PA4 (A2)
+	// SCK:  PA5 (D13)
+	// MISO: PA6 (D12)
+	// MOSI: PA7 (D11)
+	RCC->APB1ENR |= RCC_APB2ENR_SPI1EN;
+	Roulis_init(SPI1);
+
 	// Enable clock for timer TIM2, 72 MHz
 	// 500ms is 36 000 000 clock cycles.
 	MyTimer_Base_Init(TIM2, 360, 10000);
@@ -29,22 +45,6 @@ int main (void) {
 	
 	// Configure interrupt
 	MyTimer_ActiveIT(TIM2, 2);
-	
-	Girouette_Init(TIM3);
-	Girouette_InitCalibration_PA0();
-
-	Ecoute_init(TIM4);
-	
-	// To test the code below:
-	// - Add the card on top of the nucleo card
-	// - plug the potentiometer onto the A1
-	// - in the debugger, open peripherals > ADC1
-	// - See the changes in the DR register
-	
-	// GPIO A1 maps to ADC channel IN1 (see Datasheet (NOT the ref),  pin definitions)
-	ADC_init(1);
-	ADC_start();
-	
 	while (1) {};
 }
 
@@ -141,18 +141,19 @@ void TIM2_IRQHandler ( void )
 {
 	// Reset update activation bit, should have been set by peripheral on event
 	TIM2->SR &= ~TIM_SR_UIF;
+
 	
-	// Toggle LED
-//	if (ld2_active == 1) {
-	
-	Ecoute_setTheta(AlphaToTheta(Girouette_GetAlpha()));
-	if (Girouette_GetAlpha() > 45) {
+	if (Roulis_isBoatInBadShape()) 
+		Ecoute_setTheta(0);
+	else
+		Ecoute_setTheta(AlphaToTheta(Girouette_GetAlpha()));
+	/*if (Girouette_GetAlpha() > 45) {
 		ResetBroche(GPIOA, 5);
 		ld2_active = 0;
 	} else {
 		SetBroche(GPIOA, 5);
 		ld2_active = 1;
-	}
+	}*/
 }
 
 // Nouvelle version avec input pull-up/pull-down, ouput open-drain
