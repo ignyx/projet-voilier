@@ -3,9 +3,8 @@
 
 #include "stm32f10x.h"
 
-void InitUART(USART_TypeDef *UART);
-char RecevoirUART(USART_TypeDef *UART);
-void EnvoyerUART(USART_TypeDef *UART, char MESSAGE);
+void InitUART3();
+char EnvoyerUART3(char * msg);
 
 
 
