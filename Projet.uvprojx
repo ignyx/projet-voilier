@@ -464,6 +464,21 @@
               <FileType>1</FileType>
               <FilePath>.\Pilote_Roulis.c</FilePath>
             </File>
+            <File>
+              <FileName>Lib_Com_Periph_2022.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\Lib_Com_Periph_2022.lib</FilePath>
+            </File>
+            <File>
+              <FileName>MyI2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MyI2C.h</FilePath>
+            </File>
+            <File>
+              <FileName>MySPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MySPI.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -931,6 +946,21 @@
               <FileName>Pilote_Roulis.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Pilote_Roulis.c</FilePath>
+            </File>
+            <File>
+              <FileName>Lib_Com_Periph_2022.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\Lib_Com_Periph_2022.lib</FilePath>
+            </File>
+            <File>
+              <FileName>MyI2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MyI2C.h</FilePath>
+            </File>
+            <File>
+              <FileName>MySPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MySPI.h</FilePath>
             </File>
           </Files>
         </Group>
