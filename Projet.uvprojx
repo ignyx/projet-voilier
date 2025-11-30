@@ -444,6 +444,51 @@
               <FileType>1</FileType>
               <FilePath>.\Pilote_Telecommande.c</FilePath>
             </File>
+            <File>
+              <FileName>Pilote_Girouette.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Girouette.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Girouette.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Girouette.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Ecoute.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Ecoute.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Ecoute.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Ecoute.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Roulis.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Roulis.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Roulis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Roulis.c</FilePath>
+            </File>
+            <File>
+              <FileName>Lib_Com_Periph_2022.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\Lib_Com_Periph_2022.lib</FilePath>
+            </File>
+            <File>
+              <FileName>MyI2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MyI2C.h</FilePath>
+            </File>
+            <File>
+              <FileName>MySPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MySPI.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -788,7 +833,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\Projet;.\</IncludePath>
+              <IncludePath>./</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -891,6 +936,51 @@
               <FileName>Pilote_Telecommande.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Pilote_Telecommande.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Girouette.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Girouette.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Girouette.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Girouette.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Ecoute.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Ecoute.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Ecoute.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Ecoute.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Roulis.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Roulis.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Roulis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Roulis.c</FilePath>
+            </File>
+            <File>
+              <FileName>Lib_Com_Periph_2022.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\Lib_Com_Periph_2022.lib</FilePath>
+            </File>
+            <File>
+              <FileName>MyI2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MyI2C.h</FilePath>
+            </File>
+            <File>
+              <FileName>MySPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MySPI.h</FilePath>
             </File>
           </Files>
         </Group>
