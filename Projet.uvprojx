@@ -477,17 +477,17 @@
             <File>
               <FileName>Lib_Com_Periph_2022.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\Lib_Com_Periph_2022.lib</FilePath>
+              <FilePath>.\Lib_Com_Periph_2022.lib</FilePath>
             </File>
             <File>
               <FileName>MyI2C.h</FileName>
               <FileType>5</FileType>
-              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MyI2C.h</FilePath>
+              <FilePath>.\MyI2C.h</FilePath>
             </File>
             <File>
               <FileName>MySPI.h</FileName>
               <FileType>5</FileType>
-              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MySPI.h</FilePath>
+              <FilePath>.\MySPI.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -970,17 +970,17 @@
             <File>
               <FileName>Lib_Com_Periph_2022.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\Lib_Com_Periph_2022.lib</FilePath>
+              <FilePath>.\Lib_Com_Periph_2022.lib</FilePath>
             </File>
             <File>
               <FileName>MyI2C.h</FileName>
               <FileType>5</FileType>
-              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MyI2C.h</FilePath>
+              <FilePath>.\MyI2C.h</FilePath>
             </File>
             <File>
               <FileName>MySPI.h</FileName>
               <FileType>5</FileType>
-              <FilePath>U:\Documents\4IR\microcontrolleur\projet-voilier\MySPI.h</FilePath>
+              <FilePath>.\MySPI.h</FilePath>
             </File>
           </Files>
         </Group>

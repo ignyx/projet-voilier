@@ -6,7 +6,10 @@
 #include "Pilote_ADC.h"
 #include "Pilote_Timer.h"
 #include "Pilote_GPIO.h"
+#include "Pilote_Girouette.h"
+#include "Pilote_Ecoute.h"
 #include <stdio.h>
+#include <string.h>
 
 /////////////////////////////////
 //  fonction 'pas top top'     //
@@ -60,14 +63,39 @@ void Test_UART(void)
 void TIM2_IRQHandler() { //toutes les 3s
 	//enlever le flag
 	TIM2->SR &= ~TIM_SR_UIF;
-	EnvoyerUART3("RAS");
+	int theta = AlphaToTheta(Girouette_GetAlpha());
+	char buffer[50];
+	sprintf(buffer, "On ouvre les voiles d'un angle theta = %d°.\n", theta);
+	EnvoyerUART3(buffer);
+	/*
+	int alpha = Girouette_GetAlpha();
+	char allure[20];
+	if (alpha > 0 && alpha < 45) {
+		strcpy(allure, "vent debout");
+	} else if (alpha < 55) {
+		strcpy(allure, "pres serre");
+	} else if (alpha < 65) {
+		strcpy(allure, "bon plein");
+	}else if (alpha < 80) {
+		strcpy(allure, "petit largue");
+	} else if (alpha < 100) {
+		strcpy(allure, "travers");
+	}else if (alpha < 120) {
+		strcpy(allure, "largue");
+	} else if (alpha < 170) {
+		strcpy(allure, "grand largue");
+	} else {
+		strcpy(allure, "vent arriere");
+	}
+	EnvoyerUART3(strcat("Le voilier navigue au ", allure));*/
+	//EnvoyerUART3("RAS.");
 }
 
 void ADC1_2_IRQHandler() {
 	//Lire la mesure de batterie
 	int batterie = 13*ADC1->DR; //proportion de batterie : 0-> 0V, 2^12 -> 12V
 	if (batterie < (1<<12)/2) {
-		EnvoyerUART3("Batterie trop faible.");
+		EnvoyerUART3("Batterie trop faible.\n");
 	}
 }
 

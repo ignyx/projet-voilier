@@ -5,6 +5,8 @@
 #include "Pilote_Girouette.h"
 #include "Pilote_Ecoute.h"
 #include "Pilote_Roulis.h"
+#include "Pilote_Telecommande.h"
+#include "Pilote_UART.h"
 
 /////////////////////////////////
 //  fonction 'pas top top'     //
@@ -37,12 +39,21 @@ int main (void) {
 	// MOSI: PA7 (D11)
 	RCC->APB1ENR |= RCC_APB2ENR_SPI1EN;
 	Roulis_init(SPI1);
+	
+	// UART3 : PB10 and PB11 
+	// Send messages to the remote control : TIM2
+	// Motor direction : PB4
+	// Motor PWM : PA8
+	// PWM : TIM1
+	// ACD1 : PA1
+	Start_Telecommande();
 
 	while (1) {
 		Attente();
-		if (Roulis_isBoatInBadShape())
+		if (Roulis_isBoatInBadShape()) {
 			Ecoute_setTheta(0);
-		else
+			EnvoyerUART3("Attention chavirement !!!\n");
+		} else
 			Ecoute_setTheta(AlphaToTheta(Girouette_GetAlpha()));
 	};
 }
