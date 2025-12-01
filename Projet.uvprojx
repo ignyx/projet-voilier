@@ -489,6 +489,16 @@
               <FileType>5</FileType>
               <FilePath>.\MySPI.h</FilePath>
             </File>
+            <File>
+              <FileName>Pilote_Horloge.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Horloge.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Horloge.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Horloge.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -981,6 +991,16 @@
               <FileName>MySPI.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\MySPI.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Horloge.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Pilote_Horloge.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_Horloge.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pilote_Horloge.c</FilePath>
             </File>
           </Files>
         </Group>

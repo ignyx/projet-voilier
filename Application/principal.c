@@ -7,6 +7,7 @@
 #include "Pilote_Roulis.h"
 #include "Pilote_Telecommande.h"
 #include "Pilote_UART.h"
+#include "Pilote_Horloge.h"
 
 /////////////////////////////////
 //  fonction 'pas top top'     //
@@ -48,8 +49,17 @@ int main (void) {
 	// ACD1 : PA1
 	Start_Telecommande();
 
+	// We can't remap I2C1 because of the Drive (:
+	// SCL: PB6
+	// SDA: PB7
+	RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
+	Horloge_init(I2C1);
+
+
 	while (1) {
 		Attente();
+		char Tab[10];
+		Horloge_GetTimeString(Tab);
 		if (Roulis_isBoatInBadShape()) {
 			Ecoute_setTheta(0);
 			EnvoyerUART3("Attention chavirement !!!\n");
