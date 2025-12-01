@@ -8,7 +8,7 @@ static TIM_TypeDef * PWM_Timer;
 // theta must be between 0 and 90 degrees inclusive
 void Ecoute_setTheta(int theta) {
 	// ARR is 1800 so the first millisecond is 90
-	PWM_Timer->CCR1 = 90 + theta;
+	PWM_Timer->CCR3 = 90 + theta;
 	// trigger an update event so shadow register gets updated
 	PWM_Timer->EGR |= TIM_EGR_UG;
 }
@@ -32,18 +32,18 @@ void Ecoute_init ( TIM_TypeDef * Timer ) {
 	Ecoute_setTheta(0);
 	
 	// Config CC1 channel as output (00)
-	Timer->CCMR1 &= ~TIM_CCMR1_CC1S;
-	// Enable preload feature so the CCR1 value is reloaded on update event
-	Timer->CCMR1 |= TIM_CCMR1_OC1PE;
+	Timer->CCMR2 &= ~TIM_CCMR2_CC3S;
+	// Enable preload feature so the CCR2 value is reloaded on update event
+	Timer->CCMR2 |= TIM_CCMR2_OC3PE;
 	// Config as PWM in mode 1 (110)
-	Timer->CCMR1 |= TIM_CCMR1_OC1M;
-	Timer->CCMR1 &= ~TIM_CCMR1_OC1M_0;
+	Timer->CCMR2 |= TIM_CCMR2_OC3M;
+	Timer->CCMR2 &= ~TIM_CCMR2_OC3M_0;
 	
 	
 	// Enable Capture/Compare OC1 so signal is output to pin
-	Timer->CCER |= TIM_CCER_CC1E;
+	Timer->CCER |= TIM_CCER_CC3E;
 	
-	InitGPIO(GPIOB, 6, OUTPUT_ALTERNATE_PUSHPULL);
+	InitGPIO(GPIOB, 8, OUTPUT_ALTERNATE_PUSHPULL);
 	
 	// TIM4_CH1 is on pin PB6
 	// TODO setup output pin to alternate 

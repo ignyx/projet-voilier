@@ -28,7 +28,7 @@ int main (void) {
 	Girouette_Init(TIM3);
 	Girouette_InitCalibration_PA0();
 
-	// TIM4 in on PB6
+	// TIM4 in on PB8 (D15)
 	Ecoute_init(TIM4);
 	
 
