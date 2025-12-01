@@ -43,7 +43,7 @@ int main (void) {
 	
 	// UART3 : PB10 and PB11 
 	// Send messages to the remote control : TIM2
-	// Motor direction : PB4
+	// Motor direction : PB0
 	// Motor PWM : PA8
 	// PWM : TIM1
 	// ACD1 : PA1

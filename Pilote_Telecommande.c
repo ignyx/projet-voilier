@@ -35,7 +35,7 @@ void Start_Telecommande() {
 	MyTimer_Base_Start(TIM2);
 	
 //	//Moteur plateau
-	InitGPIO(GPIOB, 4, OUTPUT_PUSHPULL); //B4 : Plateau Dir
+	InitGPIO(GPIOB, 0, OUTPUT_PUSHPULL); //B0 : Plateau Dir
 	InitGPIO(GPIOA, 8, OUTPUT_ALTERNATE_PUSHPULL); //A8 : Plateau PWM
 	MyTimer_Base_Init(TIM1, 359, 9); // freq=20kHz
 	MyTimer_PWM(TIM1, 1);
@@ -104,10 +104,10 @@ void USART3_IRQHandler() {
 	signed char cap = USART3->DR;
 	char cap_abs;
 	if (cap<0) {
-		SetBroche(GPIOB, 4);
+		ResetBroche(GPIOB, 0);
 		cap_abs = (char) -cap;
 	} else {
-		ResetBroche(GPIOB, 4);
+		SetBroche(GPIOB, 0);
 		cap_abs = (char) cap;
 	}
 	MyTimer_PWM_rate(TIM1, 1, cap_abs);
